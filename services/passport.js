@@ -40,7 +40,7 @@ const googleStrategy = new GoogleStrategy({
         })
 });
 
-const agent = new HttpsProxyAgent(process.env.HTTP_PROXY || "http://127.0.0.1:1087");
+const agent = new HttpsProxyAgent(process.env.HTTPS_PROXY || "http://127.0.0.1:1087");
 googleStrategy._oauth2.setAgent(agent);
 
 passport.use(googleStrategy);
