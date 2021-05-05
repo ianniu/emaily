@@ -1,10 +1,33 @@
 const express = require('express');
-const app = express();
+const mongoose = require('mongoose');
+const cookieSession = require('cookie-session');
+const passport = require('passport');
+const keys = require('./config/keys');
+// just excute the file
+// User should be before passport, because passport need User!
+require('./models/User');
+require('./services/passport');
 
-app.get('/', (req, res) => {
-    res.send({ bye: 'buddy' });
+mongoose.connect(keys.mongoURI, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
 });
 
+const app = express();
+
+// middlewares
+app.use(
+    cookieSession({
+        maxAge: 30 * 24 * 60 * 60 * 1000,
+        keys: [keys.cookieKey]
+    })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+
+// get a function and excute it immediately with argument app
+require('./routes/authRoutes')(app);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
