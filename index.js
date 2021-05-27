@@ -7,6 +7,7 @@ const keys = require('./config/keys');
 // just excute the file
 // User should be before passport, because passport need User!
 require('./models/User');
+require('./models/Survey');
 require('./services/passport');
 
 mongoose.connect(keys.mongoURI, {
@@ -32,6 +33,7 @@ app.use(passport.session());
 // get a function and excute it immediately with argument app
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
     // Express will server up production assests

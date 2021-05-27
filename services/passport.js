@@ -40,7 +40,6 @@ const googleStrategy = new GoogleStrategy(
     });
 
 if (process.env.NODE_ENV !== 'production') {
-    // when push to heroku, remeber to comment these 2 lines
     const agent = new HttpsProxyAgent(process.env.HTTP_PROXY || "http://127.0.0.1:1087");
     googleStrategy._oauth2.setAgent(agent);
 }
