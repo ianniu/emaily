@@ -4,9 +4,13 @@ Large feedback collection website, user can send email to customers
 Project website: https://immense-wave-53863.herokuapp.com
 
 •	Build front-end with React and back-end with Node and Express. Using MongoDB for data storage and exchange.
+
 •	Use React Router and Express to route users’ requests.
+
 •	Achieve reusable user input function with Redux form.
+
 •	Implement user login process with Google OAuth, implement user credit card payment function with Stripe and implement sending email and customer feedback monitor using SendGrid.
+
 •	Project is deployed on Heroku. Development resources and deploy resources are separated.
 
 
