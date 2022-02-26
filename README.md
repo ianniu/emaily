@@ -1,5 +1,16 @@
 # Emaily
 
+Large feedback collection website, user can send email to customers      
+Project website: https://immense-wave-53863.herokuapp.com
+•	Build front-end with React and back-end with Node and Express. Using MongoDB for data storage and exchange.
+•	Use React Router and Express to route users’ requests.
+•	Achieve reusable user input function with Redux form.
+•	Implement user login process with Google OAuth, implement user credit card payment function with Stripe and implement sending email and customer feedback monitor using SendGrid.
+•	Project is deployed on Heroku. Development resources and deploy resources are separated.
+![image](https://user-images.githubusercontent.com/53012771/155833945-cf7525d8-73da-4b73-881b-6c6c47f6e58d.png)
+
+
+
 *大型的反馈收集网站，用户可以给大量的目标人群发送邮件*  
 
 项目地址： https://immense-wave-53863.herokuapp.com/
